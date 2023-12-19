@@ -383,7 +383,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        '--train-config', action='store', nargs=1, type=str, required=True,
+        '--train-config', action='store', nargs=1, type=str, default=[DEFAULT_TRAIN_CONFIG_FILE],
         help=f'Path to the training configuration yaml file.'
     )
     parser.add_argument(

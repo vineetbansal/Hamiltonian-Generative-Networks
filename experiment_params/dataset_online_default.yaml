@@ -2,20 +2,19 @@
 environment:
   # The following parameters must correspond in name and type
   # to the environment __init__() arguments
-  name: "Pendulum"
+  name: "Spring"
   mass: 0.5
-  length: 1
-  g: 3
+  elastic_cst: 2.0
 
 # Define data characteristics
 dataset:
-  img_size: 32
+  img_size: 32  # resolution used in Botev
   radius_bound: 'auto'
-  num_train_samples: 50000  # Total number of rollouts used when training on-line.
-  num_test_samples: 10000  # Number of test samples.
+  num_train_samples: 5 # Total number of rollouts used when training on-line. 50K in Blanchette 2021
+  num_test_samples: 2  # Number of test samples.
   rollout:
-    seq_length: 34
-    delta_time: 0.125
+    seq_length: 32  # no. of frames mentioned in Blanchette 2021 = 512
+    delta_time: 0.05  # from Blanchette 2021
     n_channels: 3
-    noise_level: 1  # Level of environment noise. 0 means no noise, 1 means max noise.
-                    # Maximum values are defined in each environment.
+    noise_level: 0.1  # Level of environment noise. 0 means no noise, 1 means max noise.
+                      # Maximum values are defined in each environment.
